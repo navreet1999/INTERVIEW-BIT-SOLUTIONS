@@ -1,0 +1,44 @@
+/*Given an array of N integers, find the pair of integers in the array which have minimum XOR value. Report the minimum XOR value.
+
+Examples : 
+Input 
+0 2 5 7 
+Output 
+2 (0 XOR 2) 
+Input 
+0 4 7 9 
+Output 
+3 (4 XOR 7)
+
+Constraints: 
+2 <= N <= 100 000 
+0 <= A[i] <= 1 000 000 000*/
+
+
+ struct elem
+ {
+     int val;
+ };
+ int comparator(void const *  a,void const * b )
+ {
+     int l,r;
+     l=((struct elem *)a)->val;
+     r=((struct elem *)b)->val;
+     return (l-r);
+     
+ }
+int findMinXor(int* A, int n1)
+{
+    qsort(A,n1,sizeof(A[0]),comparator);
+    int i=0,res=0,min=INT_MAX;
+    for(i=0;i<n1-1;i++)
+    {
+        res=A[i]^A[i+1];
+      // printf(" %d  ",res);
+        if(min>res)
+          min=res;
+         // printf("min= %d ,,",min);
+    }
+    
+   return min; 
+}
