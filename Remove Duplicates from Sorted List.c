@@ -16,7 +16,7 @@ listnode* deleteDuplicates(listnode* A) {
            
             free(curr->next);
             curr->next=nextt;
-             printf("gg= %d \n",curr->next);
+            
         }
         else
         {
