@@ -35,6 +35,6 @@ unsigned int reverse(unsigned int A)
     }
     
 
-10return n;
+return n;
 
 }
